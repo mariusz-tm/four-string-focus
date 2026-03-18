@@ -1,0 +1,142 @@
+/* Sets default background colour and text font/colour */
+body {
+    margin: 0;
+    background-color: #2F1919;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+
+}
+
+/* Sets the header as a flex container with a gradient background */
+header {
+    background: linear-gradient(#FD5E53 50%, #F73B2D);
+    height: 80px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Header logo */
+header img {
+    float: left;
+    height: 75px; 
+    width: 75px; 
+    margin-right: 15px;
+}
+
+/* Background colour (matching bottom of gradient) */
+nav {
+    background-color: #F73B2D;
+    padding: 5px;
+}
+
+/* Sets navigation as a flex container */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sets styling for each navigation button */
+nav ul li {
+  list-style: none;
+  margin-right: 5px;
+  background-color: #2F19196B;
+  border-radius: 25px;
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0; 
+}
+
+/* Darkens the navigation button when hovered on */
+nav ul li:hover
+{
+    background-color: #2F1919;
+}
+
+/* Set text styling for navigation buttons*/
+nav ul li a {
+ display: block;
+  padding: 15px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none; 
+}
+
+/* Sets the footer as a flex container with a gradient background*/
+footer {
+    min-height: 70px;
+    width: 100%;
+    padding: 8px 10px 4px;
+    margin: 0;
+    background: linear-gradient(#F73B2D 25%, #FD5E53);
+
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    gap: 3px;
+    box-sizing: border-box;
+}
+
+/* Sets text styling for copywrite and credits */
+footer p, footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* Sets text styling for navigation link and centres*/
+.footer-nav {
+    font-style: italic;
+    background: none;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+/* Removes margin */
+.footer-nav ol {
+    margin: 0;
+}
+
+/* Sets the navigations inline with eachother */
+.footer-nav li {
+    display: inline;
+}
+
+/* Adds a spacer " | " after every link*/
+.footer-nav li:after {
+    content: " |";
+    margin: 0 4px;
+}
+
+/* Prevents the final link from having a spacer " | " */
+.footer-nav li:last-child::after {
+    content: "";
+}
+
+/* Sets text styling of navigation links*/
+footer nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Underlines the navigation link when hovered on */
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sets background of active navigation button and disable redirection */
+#active {
+    background-color: #2F1919;
+    pointer-events: none;
+    cursor: default;  
+}

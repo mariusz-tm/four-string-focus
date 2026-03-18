@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact form for Four-String Focus">
+    <meta name="keywords" content="Contact, Questions, Information, Queries, Social Media">
+    <title>Four-String Focus</title>
+    <link rel="icon" href="images/general/favicon.ico" type="image/gif">
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        /* Sets Central Block to hold form information */
+        section {
+            justify-self: center;
+            height: 400px;
+            margin-top: 125px;
+            width: 33%;
+            min-width: 750px;
+            box-shadow: 0 12px 30px #000000;
+            background-color: #7C2929;
+            border-radius: 10px;
+            font-size: 0.9em;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Allows the asteriks information to be on the same line as heading*/
+        section p {
+            align-self: flex-end;
+            margin: -30px 0 10px 0;
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        /* Sets form as flex container and allows email label/input on the same line as name label/input */
+        form {
+            gap: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Makes the font of every label bold*/
+        label {
+            font-weight: bold;
+        }
+        
+        /* Makes asteriks red to signify require field(s) */
+        .required {
+            font-weight: bold;
+            color: #FF0000;
+        }
+
+        /* Formats text inputs (name and subject) and email input */
+        input[type="text"], input[type="email"] {
+            flex: 1;
+            padding: 7px;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Spaces subject line from name/email line and makes subject input extend the entire width */
+        #subjectLine {
+          padding-top: 25px;
+          flex-basis: 100%;
+          display: flex;
+          align-items: center;
+          gap: 2px;
+        }
+
+        /* Sets block for query with text area extending the entire width */
+        #query {
+            flex-basis: 100%;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+        }
+
+        /* Centers label text and spaces label from text area */
+        #query label {
+            padding-top: 6px;
+            width: 64px;
+        }
+
+        /* Formats the query text area as a large area */
+        #query textarea {
+            flex: 1;
+            height: 150px;
+            padding: 6px;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        /* Puts the file input on the same line as reset/submit buttons */
+        #fileButtons {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          width: 100%
+        }
+
+        /* Spaces buttons away from file input*/
+        #reset {
+          margin-left: auto;
+        }
+
+        /* Centers social media buttons */
+        .socialMedia {
+            text-align: center;
+            background: none;
+        }
+
+        /* Spaces buttons between eachother and remove link underline */
+        .socialMedia a {
+            text-decoration: none;
+            margin: 0 10px;
+
+        }
+
+        /* Round border of buttons */
+        .socialMedia a img {
+            border-radius: 10px;
+        }
+        footer {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/general/logo.jpg" alt="logo">
+        <h1>Four-String Focus</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History of the Bass Guitar</a></li>
+            <li><a href="bassists.html">Notorious Bassists</a></li>
+            <li><a href="locator.html">Bass Locator</a></li>
+            <li id="active"><a href="contact.html">Contact Us!</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2 style="margin: 0;">Please enter the following information:</h2>
+        <p><span class="required">*</span> <em>indicates a required field</em></p>
+
+        <form action="http://foo.com" method="get">
+            <label for="name">Name:<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+
+            <label for="email">Email:<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="user@address.com">
+            
+            <span id="subjectLine">
+                <label for="subject">Subject:<span class="required">*</span></label>
+                <input type="text" id="subject" name="subject" required>
+            </span>
+
+            <span id="query">
+                <label for="message">Query:<span class="required">*</span></label>
+                <textarea id="message" name="message" required placeholder="Your message"></textarea>
+            </span>
+
+            <span id="fileButtons">
+                <label for="file">Attach an image:</label>
+                <input type="file" id="file" accept="image/jpeg, image/gif">
+
+                <input type="reset" id="reset" value="Reset">
+
+                <input type="submit" id="button" value="Submit">
+            </span>
+        </form>
+    </section>
+
+    <p style="justify-self: center;"> <i>Too cool to use the form? Contact us on our socials!</i> </p>
+
+    <nav class="socialMedia">
+        <a href="https://youtube.com/404">
+            <img src="images/icons/youtube.png" width="50" height="50" alt="youtube">
+        </a>
+
+        <a href="https://x.com/404">
+            <img src="images/icons/twitter.png" width="50" height="50" alt="twitter">
+        </a>
+
+        <a href="https://instagram.com/404">
+            <img src="images/icons/instagram.png" width="50" height="50" alt="instagram">
+        </a>
+    </nav>
+
+    <footer>
+        <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
+
+        <nav class="footer-nav">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History of the Bass Guitar</a></li>
+                <li><a href="bassists.html">Notorious Bassists</a></li>
+                <li><a href="locator.html">Bass Locator</a></li>
+                <li><a href="contact.html">Contact Us!</a></li>
+            </ol>
+        </nav>
+    </footer>
+</body>
+</html>
