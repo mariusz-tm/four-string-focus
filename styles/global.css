@@ -33,7 +33,7 @@ nav {
 }
 
 /* Sets navigation as a flex container */
-nav ul {
+nav .mainNavigation {
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -41,7 +41,7 @@ nav ul {
 }
 
 /* Sets styling for each navigation button */
-nav ul li {
+nav .mainNavigation li {
   list-style: none;
   margin-right: 5px;
   background-color: #2F19196B;
@@ -53,13 +53,13 @@ nav ul li {
 }
 
 /* Darkens the navigation button when hovered on */
-nav ul li:hover
+nav .mainNavigation li:hover
 {
     background-color: #2F1919;
 }
 
 /* Set text styling for navigation buttons*/
-nav ul li a {
+nav .mainNavigation li a {
  display: block;
   padding: 15px;
   font-weight: bold;
@@ -102,7 +102,7 @@ footer p, footer a {
 }
 
 /* Removes margin */
-.footer-nav ol {
+.footer-nav ul {
     margin: 0;
 }
 
