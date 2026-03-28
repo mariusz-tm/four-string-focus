@@ -1,355 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homepage of Four-String Focus">
-    <meta name="keywords" content="Bass Guitar, Guitars, Music, Bassist, Instruements">
-    <title>Four-String Focus</title>
-    <link rel="icon" href="images/general/favicon.ico" type="image/gif">
-    <link rel="stylesheet" href="styles/global.css">
-    <style>
-        /* Sets dimensions of main and places it on the left */
-        main {
-            height: auto;
-            min-height: 700px;
-            padding-bottom: 70px;
-            width: 55%;
-            float: left;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="N/A">
+        <meta name="keywords" content="N/A">
+        <title>Four-String Focus</title>
+        <link rel="icon" href="images/general/favicon.ico" type="image/gif">
+        <link rel="stylesheet" href="styles/global.css">
 
-        /* Text formatting for main information */
-        main p {
-            font-size: 1em;
-            font-weight: normal;
-            margin-left: 10px;
-        }
+        <!-- Interal Styling -->
+        <style>
+            /* Sets dimensions of main and places it on the left */
+            main {
+                width: 55%;
+                float: left;
+                font-size: 0.975rem;
+                transition: all 1s ease;
+            }
 
-        /* Statistical table */
-        table {
-            background-color: #7C2929;
-            margin-left: 50px;
-            width:50%;
-            border :1px solid white;
-            border-collapse: collapse;
-            text-align: center;
-            font-size: 0.75em;
-            vertical-align: middle;
-            padding :2px;
-            margin-top: 0px;
-        }
+            /* Text formatting for main information */
+            main p {
+                font-weight: normal;
+                margin-left: 10px;
+            }
 
-        /* Text formatting for table */
-        th,td {
-            border: 1px solid white;
-            text-align: left;
-            padding: 8px;
-        }
+            /* Statistical table */
+            table {
+                background-color: #7C2929;
+                margin-left: 50px;
+                width:50%;
+                border :1px solid white;
+                border-collapse: collapse;
+                text-align: center;
+                font-size: 0.75em;
+                vertical-align: middle;
+                padding :2px;
+                margin-top: 0px;
+            }
 
-        /* Font change to highlight hyperlink to sources for table */
-        .credits {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
+            /* Text formatting for table */
+            th,td {
+                border: 1px solid white;
+                text-align: left;
+                padding: 8px;
+            }
 
-        /* Sets dimensions of aside and places it on the right */
-        aside {
-            align-content: center;
-            width: 44%;
-            padding: 0;
-            height: auto;
-            min-height: 750px;
-            float: right;
-        }
-        
-        /* Sets the image sizing and centers it within aside */
-        #image {
-            display: block;
-            height: 400px;
-            width: 50%;
-            border: 5px solid #7C2929;
-            border-radius: 15px;
-        }
+            /* Font change to highlight hyperlink to sources for table */
+            .credits {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
 
-        /* Sets footer position as fixed to the bottom */
-        footer {
-            position: fixed;
-        }
-    </style>
-</head>
+            /* Sets aside as flex container - Column, with each child being centered */
+            aside {
+                height: 800px;
+                float: right;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 40%;
+                margin: 0;
+                transition: all 1s ease;
+            }
 
-<body>
-    <header>
-        <img src="images/general/logo.jpg" alt="logo">
-        <h1> Four-String Focus </h1>
-    </header>
+            /* Sets heading in aside */
+            aside h2 {
+                font-style: italic;
+                margin: 0;
+            }
 
-    <nav>
-        <ul class="mainNavigation">
-            <li id="active"> <a href="index.html">Home</a> </li>
-            <li> <a href="history.html">History of the Bass Guitar</a> </li>
-            <li> <a href="bassists.html">Notorious Bassists</a> </li>
-            <li> <a href="locator.html">Bass Locator</a> </li>
-            <li> <a href="contact.html">Contact Us!</a> </li>
-        </ul>
-    </nav>
+            /* Sets paragraph in aside with width limited to 75% of the aside */
+            aside p {
+                margin: 0 auto;
+                max-width: 75%;
+                text-align: center;
+            }
 
-    <main>
-        <h2 style="margin-left: 10px;"> Who and What is Four-String Focus? </h2>
-            
-        <p>
-            <u><b> Hello and welcome to Four-String Focus! </b></u> <br>
-            Four-String Focus is a (university project) website about everything bass related (except the fish)!
-        </p>
-            
-        <p>
-            Based on Statista data estimated with NAMM ratios, 
-            despite there being an increase of revenue from instruments (more instruments being sold yearly), 
-            electric guitars <b> outsell </b> bass guitars by <b> ~3-4x consistantly! </b> 
-        </p>
+            /* Spaces audio from information paragraph*/
+            aside audio {
+                margin-top: 15px;
+            }
 
-        <table>
-            <caption> <b>Band Equipment Revenue by Category (2020-2025) | USD Billions</b> </caption>
-            <thread>
-                <th><!-- Empty Box --></th>
-                <th>Electric Guitars</th>
-                <th>Bass Guitars</th>
-                <th>Percussion (Drums)</th>
-                <th>Piano / Keyboards</th>
-            </thread>
-            <tbody>
-                <tr>
-                    <th>2020</th>
-                    <td>$15.6B</td>
-                    <td>$3.1B</td>
-                    <td>$4.7B</td>
-                    <td>$7.0B</td>
-                </tr>
-                <tr>
-                    <th>2021</th>
-                    <td>$16.8B</td>
-                    <td>$3.4B</td>
-                    <td>$5.0B</td>
-                    <td>$7.6B</td>
-                </tr>
-                <tr>
-                    <th>2022</th>
-                    <td>$18.4B</td>
-                    <td>$3.7B</td>
-                    <td>$5.5B</td>
-                    <td>$8.3B</td>
-                </tr>
-                <tr>
-                    <th>2023</th>
-                    <td>$19.4B</td>
-                    <td>$3.9B</td>
-                    <td>$5.8B</td>
-                    <td>$8.7B</td>
-                </tr>
-                <tr>
-                    <th>2024</th>
-                    <td>$20.0B</td>
-                    <td>$4.0B</td>
-                    <td>$6.0B</td>
-                    <td>$9.0B</td>
-                </tr>
-                <tr>
-                    <th>2025</th>
-                    <td>$20.6B</td>
-                    <td>$4.1B</td>
-                    <td>$6.2B</td>
-                    <td>$9.3B</td>
-                </tr>
-            </tbody>
-        </table>
+            /* Sets sizing of image with border */
+            #image {
+                height: 400px;
+                width: 250px;
+                border: 5px solid #7C2929;
+                border-radius: 15px;
+            }
 
-        <p style="width: 50%; margin-top: 0; margin-left: 50px; text-align: center; font-size: 0.75em;"> 
-            <i>
-                <a class="credits" href="https://www.statista.com/outlook/cmo/toys-hobby/musical-instruments/worldwide?currency=USD#revenue">Statista Data</a>
-                estimated using
-                <a class="credits" href="https://www.namm.org/sites/default/files/2025-11/NAMM2025GlobalReportV3.pdf">NAMM ratios</a> 
-            </i> 
-        </p>
+            /* Fixes formatting for screens with width 1280px or below */
+            @media (max-width: 1280px) {
+                main {
+                    font-size: clamp(0.45rem, 1vw, 0.6rem);
+                }
 
-        <p>To counter-act this disparity, this website teaches the wonders of the bass guitar through the following topics; </p>
+                aside {
+                    height: 500px;
+                    font-size: clamp(0.45rem, 1vw, 0.6rem);
+                }
 
-        <ol style="list-style-type: disc; font-size: 1em; font-weight: normal; margin-left: -5px;">
-            <li> A brief history about bass guitars, from its initial creation and use, to how its utilized in the modern age. </li>
-            <li> Some notable bassists throughout history, their unique playing styles and famous basslines. </li>
-            <li> And lastly, famous bass guitar brands and where to find them! </li>
-        </ol>
+                aside audio {
+                    transform: scale(0.75);
 
-        <p> 
-            Please enjoy your time browsing our website!
-            You can use both the top and bottom navigation to visit each section mentioned above.
-            On the right-hand side of the page, you can see the "Bassist of the Day", who currently is <span class="name">CURRENT BASSIST</span>, with some information and one of their famous basslines!
-        </p>
+                }
 
-        <p style="font-style: italic;"> 
-            This site is constantly changing and updating!
-            If you don't see your favourite bassist, most-known brands, or fun facts about bass guitar history,
-            <a style="color: white; text-decoration: none;" href="contact.html"> <b> contact us! </b> </a>
-        </p>
-    </main>
-
-    <aside style="justify-items: center;">
-        <span style="display: block; text-align: center; margin-top: 50px;">
-            <h2 style="margin: 0; display: inline; font-style: italic;">Bassist of the Day -</h2>
-            <h3 class="name" style="display: inline; font-style: italic;"> BASSIST </h3>
-        </span>
-
-        <img id="image" src="images/general/bassguitar.jpg" alt="Daily Bassist">
-
-        <p style="margin: 0 0 10px 0;"> <i> <span id="imgCredits">Photo: hakill, via FreeImages</span> </i> </p>
-
-        <p style="text-align: center; margin: 0; width: 75%">
-            <span id="information"> Script failed to load </span> 
-            <a style="color: white; text-decoration: none;" href="bassists.html"> <b> Learn more </b> </a>
-        </p>
-            
-        <audio id="audio" controls style="display:block; margin-top: 15px;"> Your browser does not support the audio element. </audio>
-    </aside>
-
-    <footer>
-        <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
-
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="history.html">History of the Bass Guitar</a></li>
-                <li><a href="bassists.html">Notorious Bassists</a></li>
-                <li><a href="locator.html">Bass Locator</a></li>
-                <li><a href="contact.html">Contact Us!</a></li>
-            </ul>
-        </nav>
-    </footer>
-
-    <!-- Module script type to import data.js -->
-    <script type="module">
-        // importing array "bassists" from data.js
-        import { bassists } from './data.js';
-
-        // Finds all variables by id/class inside HTML
-        const nameEl = document.querySelectorAll('.name');
-        const imageEl = document.getElementById('image');
-        const imgCreditsEl = document.getElementById('imgCredits');
-        const audioEl = document.getElementById('audio');
-        const informationEl = document.getElementById('information')
-
-        // Defines last saved bassist to prevent repeats in the RNG
-        let lastSavedBassist = -1;
-
-        // RNG between 0 -> bassists array length
-        function getRandomBassist() {
-
-            let newBassist;
-
-            // Repeats until the new bassist isn't the same as previous bassist
-            do {
-                newBassist = Math.floor(Math.random() * bassists.length);
-            } while (newBassist === lastSavedBassist);
-            
-            // Sets newly picked bassist for next loop
-            lastSavedBassist = newBassist;
-            
-            return newBassist;
-        }
-
-        // Replaces all variables from HTML with element from bassist array
-        function bassistOfTheDay() {
-            // Uses RNG to get array element value
-            const randomBassist = bassists[getRandomBassist()];
-
-            // Replaces each HTML element with data from array RNG element value
-            nameEl.forEach(bassistName => bassistName.textContent = randomBassist.name);
-            informationEl.textContent = randomBassist.information;
-
-            imageEl.src = randomBassist.image;
-            imageEl.alt = randomBassist.name;
-            imgCreditsEl.textContent = randomBassist.imgCredits;
-
-            audioEl.innerHTML = `<source src="${randomBassist.audio}" type="audio/mpeg">`;
-            audioEl.load();
-        }
-
-        // Stores the daily bassist, index position, and time of save in local storage
-        function saveCurrentBassist() {
-            const currentBassist = bassists[lastSavedBassist];
-
-            localStorage.setItem('dailyBassist', JSON.stringify({
-                ...currentBassist,
-
-                // Appends index position and date saved
-                index: lastSavedBassist,
-                savedAt: new Date().toISOString()
-            }));
-        }
-
-        function loadSavedBassist() {
-            const savedBassist = localStorage.getItem('dailyBassist');
-
-            // if savedBassists != null
-            if (savedBassist) {
-                // Reverts string into JSON
-                const parsed = JSON.parse(savedBassist);
-                
-                // Saves last saved bassist of index value from local storage
-                lastSavedBassist = parsed.index;
-
-                // Formats previous bassist's date saved (example: Mon Jan 01 2026)
-                const dateSaved = new Date(parsed.savedAt);
-                const formattedDateSaved = new Date(dateSaved.getFullYear(), dateSaved.getMonth(), dateSaved.getDate());
-
-                // Formats current date (example: Mon Jan 01 2026)
-                const currentTime = new Date();
-                const formattedCurrentTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate());
-
-                // if the saved date is the same as current date, replace all relavent HTML with stored data
-                if (formattedDateSaved.getTime() === formattedCurrentTime.getTime()) {
-                    nameEl.forEach(bassistName => bassistName.textContent = parsed.name);
-                    informationEl.textContent = parsed.information;
-
-                    imageEl.src = parsed.image;
-                    imageEl.alt = parsed.name;
-                    imgCreditsEl.textContent = parsed.imgCredits;
-
-                    audioEl.innerHTML = `<source src="${parsed.audio}" type="audio/mpeg">`;
-                    audioEl.load();
-
-                    return;
+                #image {
+                    height: 200px;
+                    width: 150px;
                 }
             }
-            // Else choose random bassist and save to local storage
-            bassistOfTheDay();
-            saveCurrentBassist();
+        </style>
+    </head>
 
-            return;
-        }
+    <body>
+        <header>
+            <img src="images/general/logo.jpg" alt="logo">
+            <h2> Four-String Focus </h2>
+        </header>
 
-        // Check to see if the current time is 00:00
-        function checkMidnight() {
-            const currentTime = new Date();
+        <nav id="mainNavigation">
+            <ul>
+                <li id="active"> <a href="index.html">Home</a> </li>
+                <li> <a href="history.html">History of the Bass Guitar</a> </li>
+                <li> <a href="bassists.html">Notorious Bassists</a> </li>
+                <li> <a href="locator.html">Bass Locator</a> </li>
+                <li> <a href="contact.html">Contact Us!</a> </li>
+            </ul>
+        </nav>
 
-            const currentHours = currentTime.getHours();
-            const currentMinutes = currentTime.getMinutes();
+        <main>
+            <h2 style="margin-left: 10px;"> Who and What is Four-String Focus? </h2>
+                
+            <p>
+                <u><b> Hello and welcome to Four-String Focus! </b></u> <br>
+                Four-String Focus is a (university project) website about everything bass related (except the fish)!
+            </p>
+                
+            <p>
+                Based on Statista data estimated with NAMM ratios, 
+                despite there being an increase of revenue from instruments (more instruments being sold yearly), 
+                electric guitars <b> outsell </b> bass guitars by <b> ~3-4x consistantly! </b> 
+            </p>
 
-            if (currentHours === 0 && currentMinutes === 0) {
+            <table>
+                <caption> <b>Band Equipment Revenue by Category (2020-2025) | USD Billions</b> </caption>
+                <thead>
+                    <tr>
+                        <th><!-- Empty Box --></th>
+                        <th>Electric Guitars</th>
+                        <th>Bass Guitars</th>
+                        <th>Percussion (Drums)</th>
+                        <th>Piano / Keyboards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2020</th>
+                        <td>$15.6B</td>
+                        <td>$3.1B</td>
+                        <td>$4.7B</td>
+                        <td>$7.0B</td>
+                    </tr>
+                    <tr>
+                        <th>2021</th>
+                        <td>$16.8B</td>
+                        <td>$3.4B</td>
+                        <td>$5.0B</td>
+                        <td>$7.6B</td>
+                    </tr>
+                    <tr>
+                        <th>2022</th>
+                        <td>$18.4B</td>
+                        <td>$3.7B</td>
+                        <td>$5.5B</td>
+                        <td>$8.3B</td>
+                    </tr>
+                    <tr>
+                        <th>2023</th>
+                        <td>$19.4B</td>
+                        <td>$3.9B</td>
+                        <td>$5.8B</td>
+                        <td>$8.7B</td>
+                    </tr>
+                    <tr>
+                        <th>2024</th>
+                        <td>$20.0B</td>
+                        <td>$4.0B</td>
+                        <td>$6.0B</td>
+                        <td>$9.0B</td>
+                    </tr>
+                    <tr>
+                        <th>2025</th>
+                        <td>$20.6B</td>
+                        <td>$4.1B</td>
+                        <td>$6.2B</td>
+                        <td>$9.3B</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="width: 50%; margin-top: 0; margin-left: 50px; text-align: center; font-size: 0.75em;"> 
+                <i>
+                    <a class="credits" href="https://www.statista.com/outlook/cmo/toys-hobby/musical-instruments/worldwide?currency=USD#revenue">Statista Data</a>
+                    estimated using
+                    <a class="credits" href="https://www.namm.org/sites/default/files/2025-11/NAMM2025GlobalReportV3.pdf">NAMM ratios</a> 
+                </i> 
+            </p>
+
+            <p>To counter-act this disparity, this website teaches the wonders of the bass guitar through the following topics; </p>
+
+            <ol style="list-style-type: disc; font-size: 1em; font-weight: normal; margin-left: -5px;">
+                <li> A brief history about bass guitars, from its initial creation and use, to how its utilized in the modern age. </li>
+                <li> Some notable bassists throughout history, their unique playing styles and famous basslines. </li>
+                <li> And lastly, famous bass guitar brands and where to find them! </li>
+            </ol>
+
+            <p> 
+                Please enjoy your time browsing our website!
+                You can use both the top and bottom navigation to visit each section mentioned above.
+                On the right-hand side of the page, you can see the "Bassist of the Day", who currently is <span class="name">CURRENT BASSIST</span>, with some information and one of their famous basslines!
+            </p>
+
+            <p style="font-style: italic;"> 
+                This site is constantly changing and updating!
+                If you don't see your favourite bassist, most-known brands, or fun facts about bass guitar history,
+                <a style="color: white; text-decoration: none;" href="contact.html"> <b> contact us! </b> </a>
+            </p>
+        </main>
+
+        <aside>
+            <h2> Bassist of the Day - <span class="name"> BASSIST </span></h2>
+
+            <figure>
+                <img id="image" src="images/general/bassguitar.jpg">
+                <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: hakill, via FreeImages</span> </i> </figcaption>
+            </figure>
+
+            <p>
+                <span id="information"> Script failed to load </span> 
+                <a style="color: white; text-decoration: none;" href="bassists.html"> <b> Learn more </b> </a>
+            </p>
+
+            <audio id="audio" controls> Your browser does not support the audio element.</audio>
+        </aside>
+
+        <footer>
+            <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History of the Bass Guitar</a></li>
+                    <li><a href="bassists.html">Notorious Bassists</a></li>
+                    <li><a href="locator.html">Bass Locator</a></li>
+                    <li><a href="contact.html">Contact Us!</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+            <!-- Module script type to import data.js -->
+        <script type="module">
+            // importing array "bassists" from data.js
+            import { bassists } from './data.js';
+
+            // Finds all variables by id/class inside HTML
+            const nameEl = document.querySelectorAll('.name');
+            const imageEl = document.getElementById('image');
+            const imgCreditsEl = document.getElementById('imgCredits');
+            const audioEl = document.getElementById('audio');
+            const informationEl = document.getElementById('information')
+
+            // Defines last saved bassist to prevent repeats in the RNG
+            let lastSavedBassist = -1;
+
+            // RNG between 0 -> bassists array length
+            function getRandomBassist() {
+
+                let newBassist;
+
+                // Repeats until the new bassist isn't the same as previous bassist
+                do {
+                    newBassist = Math.floor(Math.random() * bassists.length);
+                } while (newBassist === lastSavedBassist);
+                
+                // Sets newly picked bassist for next loop
+                lastSavedBassist = newBassist;
+                
+                return newBassist;
+            }
+
+            // Replaces all variables from HTML with element from bassist array
+            function bassistOfTheDay() {
+                // Uses RNG to get array element value
+                const randomBassist = bassists[getRandomBassist()];
+
+                // Replaces each HTML element with data from array RNG element value
+                nameEl.forEach(bassistName => bassistName.textContent = randomBassist.name);
+                informationEl.textContent = randomBassist.information;
+
+                imageEl.src = randomBassist.image;
+                imageEl.alt = randomBassist.name;
+                imgCreditsEl.textContent = randomBassist.imgCredits;
+
+                audioEl.innerHTML = `<source src="${randomBassist.audio}" type="audio/mpeg">`;
+                audioEl.load();
+            }
+
+            // Stores the daily bassist, index position, and time of save in local storage
+            function saveCurrentBassist() {
+                const currentBassist = bassists[lastSavedBassist];
+
+                localStorage.setItem('dailyBassist', JSON.stringify({
+                    ...currentBassist,
+
+                    // Appends index position and date saved
+                    index: lastSavedBassist,
+                    savedAt: new Date().toISOString()
+                }));
+            }
+
+            function loadSavedBassist() {
+                const savedBassist = localStorage.getItem('dailyBassist');
+
+                // if savedBassists != null
+                if (savedBassist) {
+                    // Reverts string into JSON
+                    const parsed = JSON.parse(savedBassist);
+                    
+                    // Saves last saved bassist of index value from local storage
+                    lastSavedBassist = parsed.index;
+
+                    // Formats previous bassist's date saved (example: Mon Jan 01 2026)
+                    const dateSaved = new Date(parsed.savedAt);
+                    const formattedDateSaved = new Date(dateSaved.getFullYear(), dateSaved.getMonth(), dateSaved.getDate());
+
+                    // Formats current date (example: Mon Jan 01 2026)
+                    const currentTime = new Date();
+                    const formattedCurrentTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate());
+
+                    // if the saved date is the same as current date, replace all relavent HTML with stored data
+                    if (formattedDateSaved.getTime() === formattedCurrentTime.getTime()) {
+                        nameEl.forEach(bassistName => bassistName.textContent = parsed.name);
+                        informationEl.textContent = parsed.information;
+
+                        imageEl.src = parsed.image;
+                        imageEl.alt = parsed.name;
+                        imgCreditsEl.textContent = parsed.imgCredits;
+
+                        audioEl.innerHTML = `<source src="${parsed.audio}" type="audio/mpeg">`;
+                        audioEl.load();
+
+                        return;
+                    }
+                }
+                // Else choose random bassist and save to local storage
                 bassistOfTheDay();
                 saveCurrentBassist();
+
+                return;
             }
-        }
 
-        // load saved bassist
-        loadSavedBassist();
+            // Check to see if the current time is 00:00
+            function checkMidnight() {
+                const currentTime = new Date();
 
-        // Checks every minute to see if it is midnight
-        setInterval(checkMidnight, 60000);
+                const currentHours = currentTime.getHours();
+                const currentMinutes = currentTime.getMinutes();
 
-        // Checks immediately on load incase it currently is midnight
-        checkMidnight();
+                if (currentHours === 0 && currentMinutes === 0) {
+                    bassistOfTheDay();
+                    saveCurrentBassist();
+                }
+            }
 
-    </script>
+            // load saved bassist
+            loadSavedBassist();
 
-</body>
+            // Checks every minute to see if it is midnight
+            setInterval(checkMidnight, 60000);
+
+            // Checks immediately on load incase it currently is midnight
+            checkMidnight();
+
+        </script>
+    </body>
 </html>
