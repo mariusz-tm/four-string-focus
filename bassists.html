@@ -1,144 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="N/A">
-    <meta name="keywords" content="N/A">
-    <title>Four-String Focus</title>
-    <link rel="icon" href="images/general/favicon.ico" type="image/gif">
-    <link rel="stylesheet" href="styles/global.css">
-    <style>
-        main {
-            padding: 50px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="N/A">
+        <meta name="keywords" content="N/A">
+        <title>Four-String Focus</title>
+        <link rel="icon" href="images/general/favicon.ico" type="image/gif">
+        <link rel="stylesheet" href="styles/global.css">
+        <style>
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
 
+            /* Sets the main as a flex container - Column, with all children aligned to the center */
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-        img {
-            width: 500px;
-            height: 700px;
-            border-radius: 8px;
-            display: block;
-        }
-        figure {
-            position: relative;
-            display: inline-block;
-            text-align: center;
-        }
-        footer {
-            position: relative;
-        }
-    </style>
-</head>
+            /* Formats top/bottom links */
+            main a {
+                width: 75%;
+                font-weight: bold;
+                color: white;
+            }
 
-<body>
-    <header>
-        <img src="images/general/logo.jpg" alt="logo">
-        <h1> Four-String Focus </h1>
-    </header>
+            /* Sets section(s) as sized 75% of width from center, with rounded border */
+            section {
+                display: flex;
+                width: 75%;
+                height: 750px;
+                margin-bottom: 50px;
+                background-color: #3a1313;
+                border: 5px solid #7C2929;
+                border-radius: 25px;
+                transition: all 1s ease;
+            }
 
-    <nav>
-        <ul class="mainNavigation">
-            <li> <a href="index.html">Home</a> </li>
-            <li> <a href="history.html">History of the Bass Guitar</a> </li>
-            <li id="active"> <a href="bassists.html">Notorious Bassists</a> </li>
-            <li> <a href="locator.html">Bass Locator</a> </li>
-            <li> <a href="contact.html">Contact Us!</a> </li>
-        </ul>
-    </nav>
+            /* Removes bottom margin of last section */
+            section:last-of-type {
+                margin-bottom: 0;
+            }
 
-<main>
+            /* Alternates styling by flipping section formatting */
+            section:nth-of-type(odd) {
+                flex-direction: row-reverse;
+            }
 
-    <article>
-        <section>
-        <h2>Roger Waters</h2>
-        <p>Information</p>
-        </section>
+            /* Sets aside as flex container - Column, sized at 50% width of section with each children aligned to the center */
+            aside {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 50%;
+                align-items: center;
+                text-align: center;
+            }
 
-        <figure> <img src="images/bassists/rogerwaters.jpg" alt="Roger Waters">
-        <figcaption"> <i> Photo: Brennan Schnell / Eastscene.com, via Wikimedia Commons. </i> </figcaption>
-        </figure>
-    </article>
+            /* Sets h1 as italic with spacing from the top of section */
+            aside h1 {
+                margin: 25px 0 0 0;
+                font-style: italic;
+            }
 
-    <article>
-        <section>
-        <h2> 桜井 哲夫 (Sakurai Tetsuo) </h2>
-        <p>Information</p>
-        </section>
+            /* Sets main image with responsive width and border */
+            aside .mainImage {
+                width: clamp(100px, 40vw, 400px);
+                height: 500px;
+                border: 5px solid #7C2929;
+                border-radius: 15px;
+                margin: 0;
+                transition: all 0.5s ease;
+            }
 
-        <figure> <img src="images/bassists/sakuraitetsuo.jpg" alt="Sakurai Tetsuo">
-        <figcaption"> <i> Photo: Jazzuality.com, via Flickr. </i> </figcaption>
-        </figure>
-    </article>
+            /* Sets gallery images as flex container - Row*/
+            .galleryImages {
+                display: flex;
+                flex-direction: row;
+                padding: 0 20px;
+                align-items: center;
+                align-content: center;
 
-    <article>
-        <section>
-        <h2>Michael Peterbalzary</h2>
-        <p>Information</p>
-        </section>
+            }
 
-        <figure> <img src="images/bassists/michaelpeterbalzary.jpg" alt="Michael Peterbalzary">
-        <figcaption"> <i> Photo: Stefan Brending / 2eight, via Wikimedia Commons. </i> </figcaption>
-        </figure>
-    </article>
+            /* Sets images in gallery with responsive width, border and box shadow */
+            .galleryImages img {
+                width: clamp(15px, 5vw, 75px);
+                height: 75px;
+                margin: 10px;
+                box-shadow: 3px 3px 8px 0px #000;
+                border: 3px solid #7C2929;
+                border-radius: 15px;
+            }
 
-    <article>
-        <section>
-        <h2>Dave Ellefson</h2>
-        <p>Information</p>
-        </section>
+            /* Sets article as 40% width of section, with responsive font sizing */
+            article {
+                float: right; 
+                width: 40%;
+                height: 100%;
+                padding: 0 50px;
+                align-content: center;
+                font-size: clamp(0.45em, 1vw, 1em);
+            }
 
-        <figure> <img src="images/bassists/daveellefson.jpg" alt="Dave Ellefson">
-        <figcaption"> <i> Photo: Ralph Arvesen / Lostoak.com, via Flickr. </i></figcaption>
-        </figure>
-    </article>
+            /* Sets audio element with responsive width */
+            audio {
+                width: clamp(100px, 15vw, 250px);
+            }
 
-    <article>
-        <section>
-        <h2>Wojtek Pilichowski</h2>
-        <p>Information about the first image goes here.</p>
-        </section>
+            /* Sets 2 audio elements inline with eachother */
+            .musicSamples {
+                display: flex;
+                justify-content: center;
+            }
 
-        <figure> <img src="images/bassists/wojtekpilichowski.jpg" alt="Wojtek Pilichowski">
-        <figcaption"> <i> Photo: Nietoksyczny, via Wikimedia Commons. </i> </figcaption>
-        </figure>
-    </article>
+            /* Caption for audio element */
+            .musicSamples figure {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                white-space: nowrap;
+                font-size: 0.75em;
+            }
 
-    <article>
-        <section>
-        <h2>Kevin Parker</h2>
-        <p>Information about the first image goes here.</p>
-        </section>
+            /* Fixes formatting for screens with width 1280px or below */
+            @media (max-width: 1280px) {
+                main {
+                    font-size: clamp(0.5rem, 1vw, 0.8rem);
+                }
 
-        <figure> <img src="images/bassists/kevinparker.jpg" alt="Kevin Parker">
-        <figcaption"> <i> Photo: Jorge Gobbi / morrissey, via Flickr. </i> </figcaption>
-        </figure>
-    </article>
+                section {
+                    height: 600px;
+                    border-width: 3px;
+                    border-radius: 15px;
+                }
 
-    <article>
-        <section>
-        <h2>Rafael Navejas</h2>
-        <p>Information about the first image goes here.</p>
-        </section>
+                aside h1 {
+                    font-size: clamp(1rem, 3vw, 1.5rem);
+                    margin: 15px 0 0 0;
+                }
 
-        <figure> <img src="images/bassists/rafaelnavejas.jpg" alt="Rafael Navejas">
-        <figcaption> <i> Photo: El Sombrerero, via Wikimedia Commons. </i> </figcaption>
-        </figure>
-    </article>
-</main>
+                aside .mainImage {
+                    width: clamp(80px, 20vw, 300px);
+                    height: 400px;
+                    border-width: 3px;
+                }
 
-    <footer>
-        <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
+                .galleryImages img {
+                    width: clamp(15px, 10vw, 40px);
+                    height: 60px;
+                    margin: 10px;
+                    border-width: 2px;
+                }
 
-        <nav class="footer-nav">
+                article {
+                    width: 45%;
+                    padding: 0 30px;
+                    font-size: clamp(0.5em, 1vw, 1em);
+                }
+
+                audio {
+                    width: clamp(80px, 15vw, 150px);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src="images/general/logo.jpg" alt="logo">
+            <h2> Four-String Focus </h2>
+        </header>
+
+        <nav id="mainNavigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="history.html">History of the Bass Guitar</a></li>
-                <li><a href="bassists.html">Notorious Bassists</a></li>
-                <li><a href="locator.html">Bass Locator</a></li>
-                <li><a href="contact.html">Contact Us!</a></li>
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="history.html">History of the Bass Guitar</a> </li>
+                <li id="active"> <a href="bassists.html">Notorious Bassists</a> </li>
+                <li> <a href="locator.html">Bass Locator</a> </li>
+                <li> <a href="contact.html">Contact Us!</a> </li>
             </ul>
         </nav>
-    </footer>
-</body>
+
+        <main>
+            <a id="top"></a>
+            <a style="margin-top: 25px;" href="#bottom">Go to Bottom of Page</a>
+
+            <!-- Roger Waters -->
+            <section>
+                <article>
+
+                    <p> Born September 6, 1943, Waters is renowned for his co-founding of the rock band Pink Floyd in 1965. He released 8 albums while in Pink Floyd before leaving in 1985. Notably in 1990, Waters staged one of the largest rock concerts in history, with an attendance of 450,000. Recently, Waters continues his music career solo. </p>
+                    <p> Waters played a pivotal role as the primary lyricist and conceptual force behind many of the band's most acclaimed works, including albums that explored themes of isolation, war, and societal critique. His creative vision helped shape the band’s identity, particularly during the 1970s, as their music grew more ambitious and philosophically driven. Despite internal tensions within the group, Waters' influence remained central to their evolving sound and stage productions. </p>
+                    <p> Following his departure from the band, Waters pursued a solo career that allowed him to further develop his distinctive narrative style and political commentary. His live performances became known for their elaborate visuals and strong thematic messages, often reflecting his personal views on global issues. Over the years, he has maintained a dedicated fan base and continues to be recognized as a significant figure in the history of rock music. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/r-waters/money.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Money" (1973) - Dark Side of the Moon</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/r-waters/haveacigar.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>Have A Cigar (1975) - Wish You Were Here</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Roger Waters </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/r-waters/rogerwatersmain.jpg" alt="Roger Waters">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Brennan Schnell / Eastscene.com, via Wikimedia Commons.</span> </i> </figcaption>
+                    
+                        <ul class="galleryImages">
+                            <img src="images/bassists/r-waters/rogerwatersalt1.jpg" alt="digboston, via Flickr">
+                            <img src="images/bassists/r-waters/rogerwatersalt2.jpg" alt="Mark Cullen, via Flickr">
+                            <img src="images/bassists/r-waters/rogerwatersalt3.jpg" alt="Eddie Berman, via Wikimedia Commons">
+                            <img src="images/bassists/r-waters/rogerwatersalt4.jpg" alt="Rodrigo Barquera, via Flickr">
+                            <img src="images/bassists/r-waters/rogerwatersalt5.jpg" alt="Jethro, via Wikimedia Commons">
+                        </ul>
+                    </figure>
+                </aside>
+            </section>
+
+            <!-- Sakurai Tetsuo -->
+            <section>
+                <article>
+
+                    <p> Born November 13, 1957, Sakurai is well famed for his founding of the jazz fusion band Casiopea in 1976, alongside 野呂 一生 (Noro Issei). He released 19 albums while in Casiopea before leaving in 1989. Nowadays, Sakurai is a member of a group called Katsushika Trio alongside 2 other ex-Casiopea members. </p>
+                    <p> Sakurai served as a key contributor to the band's rhythmic foundation and musical direction during its formative and most prolific years. As a bassist, his technical precision and melodic sensibility became defining elements of the group's signature jazz fusion sound. Throughout his tenure, the band gained both domestic and international recognition, with their tightly arranged compositions and virtuosic performances earning widespread acclaim. </p>
+                    <p> After departing from the group, Sakurai continued to explore his musical interests through various collaborations and projects, maintaining a presence within the jazz and fusion scenes. In recent years, his involvement with Katsushika Trio has marked a return to working closely with former bandmates, blending nostalgia with continued musical innovation. His enduring influence reflects a career built on consistency, craftsmanship, and a deep commitment to his genre. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/s-tetsuo/midnightrendezvous.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Midnight Rendezvous" (1979) - Casiopea</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/s-tetsuo/dominoline.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Domino Line" (1981) - Cross Point</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> 桜井 哲夫 (Sakurai Tetsuo) </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/s-tetsuo/sakuraitetsuomain.jpg" alt="Sakurai Tetsuo">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Jazzuality.com, via Flickr.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/s-tetsuo/sakuraitetsuoalt1.jpg" alt="nexcomvisual, via Wikimedia Commons">
+                            <img src="images/bassists/s-tetsuo/sakuraitetsuoalt2.jpg" alt="Reza Palevi, via Flickr">
+                            <img src="images/bassists/s-tetsuo/sakuraitetsuoalt3.jpg" alt="Anggara Sidjabat, via Flickr">
+                            <img src="images/bassists/s-tetsuo/sakuraitetsuoalt4.jpg" alt="Erwin Sanjaya, via Flickr">
+                            <img src="images/bassists/s-tetsuo/sakuraitetsuoalt5.jpg" alt="Reza Palevi, via Flickr">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+        
+            <!-- Michael Peter Balzary -->
+            <section>
+                <article>
+
+                    <p> Born October 16, 1962, Michael Peter Balzary is best known as the bassist and co-founder of the rock band Red Hot Chili Peppers, for which he writes, performs, and occasionally produces music. He has released 13 albums with the Red Hot Chili Peppers since their formation in 1983. Alongside his work with the band, Balzary has collaborated and recorded with artists such as Johnny Cash, The Mars Volta, Thom Yorke, and Alanis Morissette. </p>
+                    <p> Balzary, widely recognized by his stage name Flea, has been instrumental in shaping the band's distinctive sound through his energetic bass playing and genre-blending approach. His style, which combines funk-driven grooves with elements of punk and rock, has become a defining characteristic of the band's music. Over the decades, his dynamic stage presence and musical versatility have contributed significantly to the group's enduring popularity and evolving artistic direction. </p>
+                    <p> Beyond his work with the band, Balzary has established himself as a respected collaborator across a wide range of musical styles. His contributions to various projects highlight his adaptability and willingness to experiment with different sounds and creative approaches. In addition to performing, he has occasionally taken on production roles, further showcasing his broad skill set and continued influence within the music industry. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/m-balzary/californication.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Californication" (1999) - Californication</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/m-balzary/cantstop.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Can't Stop" (2003) - By the Way</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Michael Peter Balzary </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/m-balzary/michaelpeterbalzarymain.jpg" alt="Michael Peter Balzary">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Stefan Brending / 2eight, via Wikimedia Commons.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/m-balzary/michaelpeterbalzaryalt1.jpg" alt="Carlos Delgado, via Wikimedia Commons">
+                            <img src="images/bassists/m-balzary/michaelpeterbalzaryalt2.jpg" alt="Piyush Kumar, via Flickr">
+                            <img src="images/bassists/m-balzary/michaelpeterbalzaryalt3.jpg" alt="Henry Laurisch, via Wikimedia Commons">
+                            <img src="images/bassists/m-balzary/michaelpeterbalzaryalt4.jpg" alt="Hel Davies, via Flickr">
+                            <img src="images/bassists/m-balzary/michaelpeterbalzaryalt5.jpg" alt="Rob C. Croes, via nationaalarchief.nl">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+            
+            <!-- Dave Ellefson -->
+            <section>
+                <article>
+
+                    <p> Born November 12, 1964, Dave Ellefson is best known as the bassist and co-founder of the thrash metal band Megadeth, for which he performs and co-writes music. He released 16 albums with Megadeth across his tenures with the band between 1983 and 2021. Alongside his work with Megadeth, Ellefson has collaborated with artists such as Metal Allegiance, Temple of Brutality, F5, and Killing Machine. </p>
+                    <p> Ellefson has been a foundational figure in shaping the aggressive and technically precise sound of the band through his fast, intricate bass playing and tight rhythmic coordination. As both a performer and co-writer, he contributed to the development of the band’s signature thrash metal style, characterized by complex song structures and high-energy performances. His role remained integral across multiple eras of the band, helping to maintain consistency while adapting to changes in lineup and musical direction. </p>
+                    <p> Outside of his work with the band, Ellefson has remained active in the broader metal community through a range of collaborative projects and musical ventures. His involvement with various groups has allowed him to explore different interpretations of heavy music while continuing to refine his craft. Through these efforts, he has sustained a long-standing presence in the genre, earning recognition for both his musicianship and his contributions to the evolution of thrash metal. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/d-ellefson/peacesells.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Peace Sells" (1989) - Peace Sells...but Who's Buying?</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/d-ellefson/tornadoofsouls.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Tornado of Souls" (1990) - Rust in Peace </i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Dave Ellefson </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/d-ellefson/daveellefsonmain.jpg">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Ralph Arvesen / Lostoak.com, via Flickr.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/d-ellefson/daveellefsonalt1.jpg" alt="Stuart Sevastos, via Flickr">
+                            <img src="images/bassists/d-ellefson/daveellefsonalt2.jpg" alt="Narcoticq, via Wikimedia Commons">
+                            <img src="images/bassists/d-ellefson/daveellefsonalt3.jpg" alt="Ralph Arvesen, via Flickr">
+                            <img src="images/bassists/d-ellefson/daveellefsonalt4.jpg" alt="Tony Felgueiras, via Flickr">
+                            <img src="images/bassists/d-ellefson/daveellefsonalt5.jpg" alt="Carter Sterling, via Wikimedia Commons">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+        
+            <!-- Wojtek Pilichowski -->
+            <section>
+                <article>
+
+                    <p> Born April 16 1969, Pilichowski is a famed Polish bassist, being recognised as the best Polish bass player through numerous nominations and awards nationally. Recording his first solo album in 1994, Pilichowski has since released 20 solo albums, and over 200 total albums through his collaboration with other artists. </p>
+                    <p> Pilichowski has established himself as one of the most prominent figures in the Polish music scene through his technical mastery and distinctive approach to the bass guitar. His playing style blends elements of funk, jazz, and rock, resulting in a sound that is both versatile and immediately recognizable. Over the years, his dedication to his craft has earned him widespread acclaim, with numerous awards and honors highlighting his influence and reputation within his home country. </p>
+                    <p> Beyond his solo career, Pilichowski has been an exceptionally prolific collaborator, contributing to a vast number of recordings across a wide range of genres. His ability to adapt to different musical contexts while maintaining his unique voice has made him a highly respected figure among fellow musicians. Through both his solo work and extensive collaborations, he continues to shape and inspire the bass community with his consistency, creativity, and passion for music. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/w-pilichowski/lateevening.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Late Evening" (2014) - Intro</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/w-pilichowski/nowebuty.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Nowe Buty" (2008) - Electric Live at art.bem</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Wojtek Pilichowski </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/w-pilichowski/wojtekpilichowskimain.jpg">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Nietoksyczny, via Wikimedia Commons.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/w-pilichowski/wojtekpilichowskialt1.jpg" alt="Kubakocoj, via Wikimedia Commons">
+                            <img src="images/bassists/w-pilichowski/wojtekpilichowskialt2.jpg" alt="Jarosław Roland Kruk, via Wikimedia Commons">
+                            <img src="images/bassists/w-pilichowski/wojtekpilichowskialt3.jpg" alt="Joel Rodrigues, via Flickr">
+                            <img src="images/bassists/w-pilichowski/wojtekpilichowskialt4.jpg" alt="Tomek Struszczyk, via Wikimedia Commons">
+                            <img src="images/bassists/w-pilichowski/wojtekpilichowskialt5.jpg" alt="Wojciech Pędzich, via Wikimedia Commons">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+
+            <!-- Kevin Parker -->
+            <section>
+                <article>
+
+                    <p> Born January 20, 1986, Parker is best known for his musical project Tame Impala, for which he writes, performs, records, and produces the music. He released 5 albums under Tame Impala. Alongside his work for Tame Impala, Parker has collaborated as a producer with artists such as Lady Gaga, Gorillaz, Rihanna, and Travis Scott. </p>
+                    <p> He first gained widespread recognition with the release of Innerspeaker in 2010, followed by Lonerism in 2012, both of which were praised for their psychedelic sound and introspective songwriting. His third album, Currents (2015), marked a shift toward a more synth-driven, pop-oriented style and brought him mainstream success. This evolution continued with The Slow Rush in 2020, further solidifying his reputation as a versatile and innovative artist. </p>
+                    <p> In addition to his studio work, Parker is known for his meticulous approach to sound design and his ability to blend analog and digital recording techniques. His influence extends beyond his own releases, as his production style has shaped the sound of contemporary psychedelic and alternative music. Through both Tame Impala and his collaborations, he has established himself as one of the most distinctive and sought-after musicians and producers of his generation. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/k-parker/thelessiknowthebetter.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"The Less I Know the Better" (2015) - Currents</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/k-parker/letithappen.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Let It Happen" (2015) - Currents</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Kevin Parker </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/k-parker/kevinparkermain.jpg">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: Jorge Gobbi / morrissey, via Flickr.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/k-parker/kevinparkeralt1.jpg" alt="Abby Gillardi, via Flickr">
+                            <img src="images/bassists/k-parker/kevinparkeralt2.jpg" alt="Eddie Janssens, via Wikiportrait">
+                            <img src="images/bassists/k-parker/kevinparkeralt3.jpg" alt="Andy Witchger, via Wikimedia Commons">
+                            <img src="images/bassists/k-parker/kevinparkeralt4.jpg" alt="Kennysun, via Wikipédia">
+                            <img src="images/bassists/k-parker/kevinparkeralt5.jpg" alt="Abby Gillardi, via Flickr">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+
+            <!-- Rafael Navejas -->
+            <section>
+                <article>
+
+                    <p> Born June 18, 1979, Rafael Navejas is best known as the bassist of the rock band Enjambre, for which he performs and contributes to songwriting. He has released 8 albums with Enjambre since joining the group. Alongside his work with the band, Navejas has collaborated with various artists within the Latin alternative and rock music scenes. </p>
+                    <p> Navejas has played a significant role in shaping the band's sound through his melodic bass lines and steady rhythmic foundation. His playing complements the group's distinctive blend of alternative rock and retro-inspired influences, adding depth and cohesion to their music. As both a performer and contributor to songwriting, he has helped define the band's evolving style while maintaining a strong connection to their core musical identity. </p>
+                    <p> In addition to his work with the band, Navejas has remained active within the broader Latin alternative and rock scenes through various collaborations. These projects have allowed him to explore different musical directions while refining his approach as a bassist. His continued involvement across multiple creative efforts highlights his versatility and commitment to his craft, solidifying his place within contemporary Latin rock music. </p>
+
+                    <figure class="musicSamples">
+                        <figure>
+                            <audio controls> <source src="audio/r-navejas/impacto.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Impacto" (2008) - El Segundo Es Felino</i> </figcaption>
+                        </figure>
+
+                        <figure>
+                            <audio controls> <source src="audio/r-navejas/dulcesoledad.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                            <figcaption> <i>"Dulce Soledad" (2010) - Daltónico</i> </figcaption>
+                        </figure>
+                    </figure>
+                </article>
+
+                <aside>
+                    <h1> Rafael Navejas </span></h1>
+
+                    <figure>
+                        <img class="mainImage" src="images/bassists/r-navejas/rafaelnavejasmain.jpg">
+                        <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: El Sombrerero, via Wikimedia Commons.</span> </i> </figcaption>
+                    
+                        <span class="galleryImages">
+                            <img src="images/bassists/r-navejas/rafaelnavejasalt1.jpg" alt="El Sombrerero, via Wikimedia Commons">
+                            <img src="images/bassists/r-navejas/rafaelnavejasalt2.jpg" alt="El Sombrerero, via Wikimedia Commons">
+                            <img src="images/bassists/r-navejas/rafaelnavejasalt3.jpg" alt="El Sombrerero, via Wikimedia Commons">
+                            <img src="images/bassists/r-navejas/rafaelnavejasalt4.jpg" alt="El Sombrerero, via Wikimedia Commons">
+                            <img src="images/bassists/r-navejas/rafaelnavejasalt5.jpg" alt="El Sombrerero, via Wikimedia Commons">
+                        </span>
+                    </figure>
+                </aside>
+            </section>
+
+            <a id="bottom"></a>
+            <a style="margin-bottom: 95px;" href="#top">Go to Top of Page</a>
+        </main>
+
+        <footer>
+            <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History of the Bass Guitar</a></li>
+                    <li><a href="bassists.html">Notorious Bassists</a></li>
+                    <li><a href="locator.html">Bass Locator</a></li>
+                    <li><a href="contact.html">Contact Us!</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+
+    </body>
 </html>
