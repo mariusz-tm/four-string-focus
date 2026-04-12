@@ -13,9 +13,9 @@
         section {
             justify-self: center;
             height: 400px;
+            width: 600px;
+            min-width: 45%;
             margin-top: 125px;
-            width: 33%;
-            min-width: 750px;
             box-shadow: 0 12px 30px #000000;
             background-color: #7C2929;
             border-radius: 10px;
@@ -23,6 +23,7 @@
             padding: 16px;
             display: flex;
             flex-direction: column;
+            transition: all 1s ease;
         }
 
         /* Allows the asteriks information to be on the same line as heading*/
@@ -118,15 +119,50 @@
         .socialMedia a {
             text-decoration: none;
             margin: 0 10px;
-
         }
 
         /* Round border of buttons */
         .socialMedia a img {
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
+            transition: all 1s ease;
         }
-        footer {
-            position: fixed;
+
+        /* Fixes formatting for screens with width 1280px or below */
+        @media (min-resolution: 144dpi) and (max-resolution: 145dpi) {
+            section {
+                height: 300px;
+                width: 500px;
+                min-width: 40%;
+                margin-top: 50px;
+                font-size: 0.75rem;
+            }
+
+            section p {
+                font-size: 0.75rem;
+            }
+
+            input[type="text"], input[type="email"] {
+                font-size: 0.5rem;
+            }
+
+            #subjectLine {
+                padding-top: 15px;
+            }
+
+            #query label {
+                width: 54px;
+            }
+
+            #query textarea {
+                height: 100px;
+            }
+
+            .socialMedia a img {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -137,8 +173,8 @@
         <h1>Four-String Focus</h1>
     </header>
 
-    <nav>
-        <ul class="mainNavigation">
+    <nav id="mainNavigation">
+        <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="history.html">History of the Bass Guitar</a></li>
             <li><a href="bassists.html">Notorious Bassists</a></li>
@@ -183,22 +219,22 @@
 
     <nav class="socialMedia">
         <a href="https://youtube.com/404">
-            <img src="images/icons/youtube.png" width="50" height="50" alt="youtube">
+            <img src="images/icons/youtube.png" alt="youtube">
         </a>
 
         <a href="https://x.com/404">
-            <img src="images/icons/twitter.png" width="50" height="50" alt="twitter">
+            <img src="images/icons/twitter.png" alt="twitter">
         </a>
 
         <a href="https://instagram.com/404">
-            <img src="images/icons/instagram.png" width="50" height="50" alt="instagram">
+            <img src="images/icons/instagram.png" alt="instagram">
         </a>
     </nav>
 
     <footer>
         <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
 
-        <nav class="footer-nav">
+        <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="history.html">History of the Bass Guitar</a></li>
