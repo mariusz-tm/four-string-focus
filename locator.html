@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Information about known Bass Guitar Comapnies">
+        <meta name="keywords" content="Fender, Harley Benton, Yamaha, Bass Guitars, Buy Bass Guitar">
+        <title>Bass Locator</title>
+        <link rel="icon" href="images/general/favicon.ico" type="image/gif">
+        <link rel="stylesheet" href="styles/global.css">
+        <style>
+            /* Sets main as flex container - Row, with each child spaced with leftover space*/
+            main {
+                padding: 25px;
+                display: flex;
+                justify-content: space-between;
+                transition: all 1s ease;
+            }
+
+            /* Sets each section as 30% of main width */
+            section {
+                width: 30%;
+                text-align: center;
+            }
+
+            /* Formats font styling of section header(s) */
+            section a {
+                text-decoration: none;
+                color: #FFF;
+            }
+
+            /* Sets the header of each section with a non-repeating background image, 100% of the section width, and gives the text a "shadow" to give an outline */
+            section a header {
+                border-radius: 25px;
+                background-size: contain; 
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%; 
+                height: 100px; 
+                justify-content: center;
+                background-size: 100%;
+                text-shadow: -2px -2px 0 #000, 2px -2px 2px #000, -2px 2px 0 #000, 2px 2px 2px #000;
+                font-size: 1.25rem;
+            }
+
+            /* Sets sizing of text inside of section */
+            section p {
+                font-size: 1.2rem;
+            }
+        
+            /* Sets sizing of Google Maps embeds */
+            iframe {
+                width: 85%;
+                height: 375px;
+                margin: 0;
+            }
+
+            /* Formats Google Maps caption(s) */
+            figcaption {
+                width: 100%;
+                font-size: 1rem;
+                font-style: italic;
+            }
+
+            /* Fixes formatting for screens with width 1280px or below */
+            @media (max-width: 1280px) {
+                section p {
+                    font-size: clamp(0.5rem, 2vw, 0.75rem);
+                }
+
+                iframe {
+                    width: 75%;
+                    height: 175px;
+                }
+
+                figcaption {
+                    font-size: 0.75rem;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src="images/general/logo.jpg" alt="logo">
+            <h1>Four-String Focus</h1>
+        </header>
+
+        <nav id="mainNavigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History of the Bass Guitar</a></li>
+                <li><a href="bassists.html">Notorious Bassists</a></li>
+                <li id="active"><a href="locator.html">Bass Locator</a></li>
+                <li><a href="contact.html">Contact Us!</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <a href="https://www.flickr.com/photos/myxi2/11665112113/in/photostream/">
+                    <header style="background-image: url(images/general/fender.jpg);">
+                        <h2>Fender</h2>
+                    </header>
+                </a>
+
+                <p>Fender bass guitars are widely regarded as a benchmark for tone, reliability, and practical design. The Precision Bass is known for its punchy low-end and noise-reducing split-coil pickup, while the Jazz Bass offers a brighter, more flexible tonal range through its dual-pickup configuration. Reviews also highlight Fender's strong build quality and player-friendly design, with modern models balancing vintage style and subtle refinements, while even mid-range options maintain versatility and consistency.</p>
+
+                <figure>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d9543702.89672062!2d-9.28527218556968!3d54.26847864661292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFender%20Bass%20Guitar!5e0!3m2!1sen!2sie!4v1776069365220!5m2!1sen!2sie" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <figcaption>Google Maps Search for "Fender Bass Guitar"</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <a href="https://commons.wikimedia.org/wiki/File:Harley_Benton_SC_Sunburst.jpg">
+                    <header style="background-image: url(images/general/harleybenton.jpg);">
+                        <h2>Harley Benton</h2>
+                    </header>
+                </a>
+
+                <p> Harley Benton bass guitars are widely recognized as affordable instruments that deliver strong value for money, particularly for beginners and budget-conscious players. Reviews often highlight their solid build quality and modern features at low price points, with versatile electronics that exceed expectations for their cost. While some criticism exists around quality control and hardware, they are generally regarded as reliable, practical instruments for entry-level use and casual performance. </p>
+
+                <figure>        
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4439679.533585799!2d-9.220597538237762!3d53.664513918238534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHarley%20Benton%20Bass%20Guitar!5e0!3m2!1sen!2sie!4v1776070528568!5m2!1sen!2sie" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <figcaption>Google Maps Search for "Harley Benton Bass Guitar"</figcaption>
+                </figure>
+            </section>
+        
+            <section>
+                <a href="https://commons.wikimedia.org/wiki/File:Yamaha_bass_guitar_RBX_200.jpg">
+                    <header style="background-image: url(images/general/yamaha.jpg);">
+                        <h2>Yamaha</h2>
+                    </header>
+                </a>
+
+                <p> Yamaha bass guitars are widely recognized for their consistent quality and reliability, appealing to both beginners and experienced players. Reviews often highlight their solid construction and balanced tone, with versatile electronics that perform well across a variety of musical styles. While they may lack the distinctive character of some higher-end brands, they are generally regarded as dependable, practical instruments suited for both practice and live performance in most situations. </p>
+
+                <figure>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4862596.024666989!2d-9.221486262364678!3d53.48071084982929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sYamaha%20Bass%20Guitar!5e0!3m2!1sen!2sie!4v1776070574295!5m2!1sen!2sie" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <figcaption>Google Maps Search for "Yamaha Bass Guitar"</figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <footer>
+            <p> &copy; 2026 - Four-String Focus </p>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History of the Bass Guitar</a></li>
+                    <li><a href="bassists.html">Notorious Bassists</a></li>
+                    <li><a href="locator.html">Bass Locator</a></li>
+                    <li><a href="contact.html">Contact Us!</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>

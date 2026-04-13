@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="N/A">
-        <meta name="keywords" content="N/A">
+        <meta name="description" content="Homepage of Four-String Guitars">
+        <meta name="keywords" content="Bass Guitars, Instruments, Music, Music History, Bassists">
         <title>Four-String Focus</title>
         <link rel="icon" href="images/general/favicon.ico" type="image/gif">
         <link rel="stylesheet" href="styles/global.css">
@@ -48,6 +48,7 @@
 
             /* Font change to highlight hyperlink to sources for table */
             .credits {
+                margin: 0;
                 text-decoration: none;
                 color: white;
                 font-weight: bold;
@@ -92,6 +93,12 @@
                 width: 250px;
                 border: 5px solid #7C2929;
                 border-radius: 15px;
+            }
+
+            figcaption a {
+                font-size: 0.9rem;
+                text-decoration: none;
+                color: #FFF;
             }
 
             /* Fixes formatting for screens with viewport scaling of 1.5x */
@@ -161,45 +168,45 @@
                 <tbody>
                     <tr>
                         <th>2020</th>
-                        <td>$15.6B</td>
-                        <td>$3.1B</td>
-                        <td>$4.7B</td>
-                        <td>$7.0B</td>
+                        <td>$15.6 B</td>
+                        <td>$3.1 B</td>
+                        <td>$4.7 B</td>
+                        <td>$7.0 B</td>
                     </tr>
                     <tr>
                         <th>2021</th>
-                        <td>$16.8B</td>
-                        <td>$3.4B</td>
-                        <td>$5.0B</td>
-                        <td>$7.6B</td>
+                        <td>$16.8 B</td>
+                        <td>$3.4 B</td>
+                        <td>$5.0 B</td>
+                        <td>$7.6 B</td>
                     </tr>
                     <tr>
                         <th>2022</th>
-                        <td>$18.4B</td>
-                        <td>$3.7B</td>
-                        <td>$5.5B</td>
-                        <td>$8.3B</td>
+                        <td>$18.4 B</td>
+                        <td>$3.7 B</td>
+                        <td>$5.5 B</td>
+                        <td>$8.3 B</td>
                     </tr>
                     <tr>
                         <th>2023</th>
-                        <td>$19.4B</td>
-                        <td>$3.9B</td>
-                        <td>$5.8B</td>
-                        <td>$8.7B</td>
+                        <td>$19.4 B</td>
+                        <td>$3.9 B</td>
+                        <td>$5.8 B</td>
+                        <td>$8.7 B</td>
                     </tr>
                     <tr>
                         <th>2024</th>
-                        <td>$20.0B</td>
-                        <td>$4.0B</td>
-                        <td>$6.0B</td>
-                        <td>$9.0B</td>
+                        <td>$20.0 B</td>
+                        <td>$4.0 B</td>
+                        <td>$6.0 B</td>
+                        <td>$9.0 B</td>
                     </tr>
                     <tr>
                         <th>2025</th>
-                        <td>$20.6B</td>
-                        <td>$4.1B</td>
-                        <td>$6.2B</td>
-                        <td>$9.3B</td>
+                        <td>$20.6 B</td>
+                        <td>$4.1 B</td>
+                        <td>$6.2 B</td>
+                        <td>$9.3 B</td>
                     </tr>
                 </tbody>
             </table>
@@ -238,7 +245,7 @@
 
             <figure>
                 <img id="image" src="images/general/bassguitar.jpg">
-                <figcaption style="margin-top: 0;"> <i> <span id="imgCredits">Photo: hakill, via FreeImages</span> </i> </figcaption>
+                <figcaption> <i> <a href="https://www.freeimages.com/photo/bass-1421883" id="imgCredits">Photo: hakill, via FreeImages</a> </i> </figcaption>
             </figure>
 
             <p>
@@ -250,7 +257,7 @@
         </aside>
 
         <footer>
-            <p> &copy; 2026 - Four-String Focus | <a href="credits.html">credits</a> </p>
+            <p> &copy; 2026 - Four-String Focus </p>
 
             <nav>
                 <ul>
@@ -272,6 +279,7 @@
             const nameEl = document.querySelectorAll('.name');
             const imageEl = document.getElementById('image');
             const imgCreditsEl = document.getElementById('imgCredits');
+            const creditsLinkEl = document.getElementById('imgCredits');
             const audioEl = document.getElementById('audio');
             const informationEl = document.getElementById('information')
 
@@ -306,6 +314,7 @@
                 imageEl.src = randomBassist.image;
                 imageEl.alt = randomBassist.name;
                 imgCreditsEl.textContent = randomBassist.imgCredits;
+                creditsLinkEl.href = randomBassist.creditsLink;
 
                 audioEl.innerHTML = `<source src="${randomBassist.audio}" type="audio/mpeg">`;
                 audioEl.load();
@@ -324,6 +333,7 @@
                 }));
             }
 
+            // Checks whether a saved bassist by seeing if key "dailyBassist" exists
             function loadSavedBassist() {
                 const savedBassist = localStorage.getItem('dailyBassist');
 
@@ -351,6 +361,7 @@
                         imageEl.src = parsed.image;
                         imageEl.alt = parsed.name;
                         imgCreditsEl.textContent = parsed.imgCredits;
+                        creditsLinkEl.href = parsed.creditsLink;
 
                         audioEl.innerHTML = `<source src="${parsed.audio}" type="audio/mpeg">`;
                         audioEl.load();
